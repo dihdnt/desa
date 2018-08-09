@@ -96,7 +96,7 @@
   }
 
   span {
-    color: #565a40;
+    color: $cor02;
     font-size: 22px;
   }
 
@@ -168,20 +168,20 @@
 
 .newsletter__input {
   background-color: transparent;
-  border: 1px solid #dfdfdf;
+  border: 1px solid $light-gray;
   border-radius: 2px;
-  color: #666;
+  color: $cor02;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
   height: 50px;
   line-height: 16px;
   outline: none;
-  padding: 18px 20px 18px 45px;
+  padding:0 15px;
   transition: all 150ms ease-in-out;
 
-   ::placeholder {
-    color: #bababa;
+  ::placeholder {
+    color: $cor02;
     font-style: italic;
   }
 
@@ -337,7 +337,7 @@
 }
 
 .ruler__title {
-  color: #565a40;
+  color: $cor02;
   font-size: 13px;
   font-weight: 300;
   letter-spacing: -.1px;

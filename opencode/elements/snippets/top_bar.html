@@ -1,21 +1,9 @@
 <section class="info-lane center">
-
 	<div class="help">
 		<span class="help__desc">
-			sac: (14) 3316-8200 | (14) 99690-8200
+			sac: {{ settings.phone }}
 		</span>
-		<a href="/aprenda-a-comprar" class="help__link">
-			meus pedidos
-		</a>
-		<a href="/b2b-para-lojistas" class="help__link">
-			minha conta
-		</a>
+		<a href="{{links.orders}}" class="help__link">meus pedidos</a>
+		<a href="{{links.account}}" class="help__link">minha conta</a>
 	</div>
-	<ul class="info-list">
-		<li class="info-list__item">
-			<span class="info-list__desc">
-				{% element 'snippets/cart' %}
-			</span>
-		</li>
-	</ul>
 </section>

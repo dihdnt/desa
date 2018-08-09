@@ -183,11 +183,11 @@ export function minicartFetch(store) {
                         // Update Amount
                         Array.from(document.querySelectorAll('[data-cart=amount-newiscool]')).forEach(item => {
                             if(cart.amount == 1) {
-                                item.innerHTML = '0' + cart.amount + ' item';
+                                item.innerHTML = '0' + cart.amount ;
                             } else if(cart.amount < 10) {
-                                item.innerHTML = '0' + cart.amount + ' itens';
+                                item.innerHTML = '0' + cart.amount ;
                             } else {
-                                item.innerHTML = cart.amount + ' itens';
+                                item.innerHTML = cart.amount ;
                             }
                         });
                         Array.from(document.querySelectorAll('[data-cart=price]')).forEach(item => item.innerHTML = cart.price);
@@ -198,7 +198,6 @@ export function minicartFetch(store) {
                             dispatch(minicart(cart));
                         }
                     });
-
                 return null;
             });
     }

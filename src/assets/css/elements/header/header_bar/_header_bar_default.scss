@@ -23,21 +23,17 @@
     }
   }
 }
-
-
 #header_bar {
   align-items: center;
   background-color: white;
   display: flex;
-  padding: 10px 15px;
+  padding:0;
   position: relative;
   z-index: 200 !important;
   transition: all 150ms ease-in-out;
   width: 100%;
   height: 112px;
   max-width: 1140px;
-  padding: 0 40px;
-
   @media(max-width: 1199px) {
     margin: 0 15px;
   }
@@ -67,15 +63,13 @@
 
   form {
     align-items: center;
-    background-color: white;
-    border: 1px solid #dfdfdf;
     border-radius: 2px;
     display: flex;
-    height: 50px;
-    padding: 0 0 0 20px;
+    padding: 0;
+    flex-wrap: wrap;
 
     @media(min-width: 1200px) {
-      max-width: 750px;
+      max-width: 590px;
     }
 
     label {
@@ -85,44 +79,38 @@
 
     input {
       background: none;
-      border: 1px solid transparent;
-      color: #babaca;
-      font-size: 12px;
+      border:solid $cor02;
+      border-width: 0 0 1px 0;
+      color: $cor02;
+      font-size: 23px;
       font-weight: 400;
-      height: 48px;
-      line-height: 40px;
-      padding: 19px 60px 19px 6px;
+      padding: 22px 20px;
       transition: all 150ms ease-in-out;
-
+      width: 90%;
       &::placeholder {
-        color: #babaca;
+        color: $cor02;
         font-style: italic;
       }
-
       &:focus {
-        color: #666;
+        color: $dark-gray;
       }
     }
   }
 
   .btn-search {
     background-color: $cor01;
-    border: none;
-    border-radius: 0 2px 2px 0;
-    bottom: 0;
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 50px;
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: relative;
+    left: 50%;
+    top: 50%;
     text-transform: uppercase;
-    width: 70px;
-    transition: $transition;
-
+    width: 200px;
+    transform: translate(-50%,-50%);
+    padding: 10px;
     &:hover {
-      opacity: .9;
+      opacity: 1;
     }
   }
 }
@@ -189,7 +177,7 @@
 
 
 .user__title {
-  color: #565a40;
+  color: $cor02;
   font-size: 13px;
   font-weight: 700;
   margin-bottom: 3px;
@@ -223,7 +211,7 @@
 }
 
 .support__title {
-  color: #565a40;
+  color: $cor02;
   display: block;
   font-size: 13px;
   font-weight: 700;
@@ -255,7 +243,7 @@
   border-radius: 2px;
   display: flex;
   height: 50px;
-  width: 225px;
+  width: 60px;
   align-items: center;
 
   &:hover {

@@ -25,11 +25,9 @@
 
                 <ul class="social-footer">
                     <li class="social-footer__item">
-                        <a href="{{ settings.faceKanitz }}" target="_blank" class="social-footer__link">
-                            <svg class="social-footer__icon icon--facebook">
-                                <use xlink:href="#icon-facebook"></use>
-                            </svg>
-                            newiscool 1
+                        <a href="{{ settings.facebook }}" target="_blank" class="social-footer__link">
+                            <svg class="social-footer__icon icon--facebook"><use xlink:href="#icon-facebook"></use></svg>
+                            Óticas de sá
                         </a>
                     </li>
                 </ul>
@@ -55,13 +53,10 @@
             </nav>
         </div>
 
-        <nav class="footer_copyright">
-            <div class="copyright__text">{{ Translation('ag_mensagem_rodape') }}</div>
-            <a href="http://newiscool.com.br/" class="seal__newiscool" target="_blank"><img src="{{ asset('img/newiscool.png') }}" alt=""/></a>
-            <!-- {% element 'snippets/credits' %} -->
-        </nav>
+
         <nav class="footer__copyright">
             <div class="copyright__text">{{ settings.copyright }}</div>
+            <a href="http://newiscool.com.br/" class="seal__newiscool" target="_blank"><img src="{{ asset('img/newiscool.png') }}" alt=""/></a>
             {% element 'snippets/credits' %}
         </nav>
     </footer>

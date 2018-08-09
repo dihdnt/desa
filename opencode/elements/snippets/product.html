@@ -2,9 +2,13 @@
     <div class="border {% if not product.available %} off {% endif %}">
         <figure class="product-image">
             <a href="{{ product.link }}">
-                <img class="img-responsive" src="{{ product.images[0].full }}" alt="{{ product.name }}">
+                <img class="img-responsive image--one" src="{{ product.images[0].full }}" alt="{{ product.name }}">
+                {% if product.images[1] %}
+                <img class="img-responsive image--two" src="{{ product.images[1].full }}" alt="{{ product.name }}">
+                {% else %}
+                <img class="img-responsive image--two" src="{{ product.images[0].full }}" alt="{{ product.name }}">
+                {% endif %}
             </a>
-
         </figure>
             {% if product.price_offer > 0 %}
             <div class="product__offer">
@@ -13,44 +17,29 @@
                 <span class="preco-off">OFF</span>
             </div>
             {% endif %}
-            {% if product.available %}
-                <div class="labels">
-                        {% if product.free_shipping %}
-                            {% if Image('free_shipping') %}
-                                    <span class="free-shipping">{{ Image('free_shipping') }}</span>
-                            {% else %}
-                                    <span class="label free-shipping">Frete Grátis</span>
-                            {% endif %}
-                         {% endif %}
 
-                        {% if product.new %}
-                            {% if Image('new') %}
-                                <span class=" botao-new">{{ Image('new') }}</span>
-                            {% else %}
-                                <span class="label new">Novidade</span>
-                            {% endif %}
-                        {% endif %}
-                        {% if product.featured %}
-                        {% if Image('featured') %}
-                            <span class="featured">{{ Image('featured') }}</span>
-                        {% else %}
-                            <span class="label featured">Destaque</span>
-                        {% endif %}
-                    {% endif %}
-                </div>
-            {% endif %}
-        
+            
+           
+          
+            
             <div class="product-name" itemprop="name">
+                {% if product.has_variation %}
+                    <div class="variation-qtd">
+                        <h3>+{{product.variants|length}} opções</h3>
+                    </div>
+                    {% else %}
+                    <div class="variation-qtd variation-qtd-vazio">
+                        <h3></h3>
+                    </div>
+                {% endif %}
+                <div class="brand-showcase">
+                    <h4>{{ product.brand}} </h4>
+                </div>
                 <a href="{{ product.link }}">
-                    <h3>{{ product.name|slice(0,80) }}</h3>
+                    <h2>{{ product.name|slice(0,80) }}</h2>
                 </a>
             </div>
-            <div class="product__rating">
-                <span class="star{{ product.ranking.rating }}"></span>
-             </div>
-
         {% if product.available %}
-
         <div class="product__prices">
             {# Verificação: Há Oferta ou Não #}
             {% if product.price_offer > 0 %}

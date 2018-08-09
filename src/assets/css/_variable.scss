@@ -9,7 +9,7 @@ $light-pattern:                 repeating-linear-gradient(-45deg, transparent, t
 $dark-pattern:                  repeating-linear-gradient(-45deg, transparent, transparent 4px, rgba(0, 0, 0, 0.2) 6px, rgba(0, 0, 0, 0.2) 1px);
 
 
-// Padr�o de Font
+// Padrao de Font
 $font-family: 					'Montserrat', sans-serif;
 $font-size: 					12px;
 $line-height: 					$font-size;
@@ -29,7 +29,7 @@ $color-shadow:                  rgba(0,0,0,(1.5/10));
 // Transi o
 $transition:					all 200ms ease-in-out;
 
-// Texto Padr�o
+// Texto Padrao
 $text-color:					lighten($cor02,40%);
 $text-font-family:				$font-family;
 $text-font-size:				$font-size;
@@ -38,7 +38,7 @@ $text-font-weight:				$font-weight;
 $text-text-transform:			$text-transform;
 $text-text-align:				'';
 
-// Link Padr�o
+// Link Padrao
 $link-color:					$cor01;
 $link-font-family:				'';
 $link-background:				'';
@@ -83,7 +83,7 @@ $form-width:					100%;
 	$form-hover-width:					'';
 
 
-// Bot�o
+// Botao
 $button-color:					lighten($cor02,100%);
 $button-background:				$cor01;
 $button-border:					none;
@@ -94,7 +94,7 @@ $button-font-family:			'';
 $button-line-height:			40px;
 $button-padding:                0;
 $button-width:					'';
-	// Bot�o Hover
+	// Botao Hover
 	$button-hover-color:					$button-color;
 	$button-hover-background:				darken($button-background , 10%);
 	$button-hover-border:					'';

@@ -10,12 +10,17 @@
 				</a>
 			</figure>
 		</div>
-		
-			{% element 'snippets/nav_bar' %}
-
-		<div class=" env-search">
+		<div class="env-search">
 			{% element 'snippets/search' %}
 		</div>
+		{% element 'snippets/nav_bar' %}
+		<ul class="info-list">
+			<li class="info-list__item">
+				<span class="info-list__desc">
+					{% element 'snippets/cart' %}
+				</span>
+			</li>
+		</ul>
 	</div>
 
 </section>

@@ -1,5 +1,4 @@
-
-
+<h1>{{ products.variants}} </h1>
 {% element 'snippets/newsletter' %}
 <!-- {% element 'snippets/banner_info' %} -->
 
@@ -16,24 +15,16 @@
     "products": products
     } %}
 </section>
-
-
 <section class="banners-extras">
-    <div class="center banners-extras__center">
-     
+    <div class="center banners-extras__center">     
         <div class="banners-extras__item">
             {{ banner.extra12 }}
-        </div>
-        
+        </div>        
         <div class="banners-extras__item">
             {{ banner.extra12 }}
         </div>     
     </div>
 </section>
-
-<div class="banner-showcase">
-    {{ banner.extra5 }}
-</div>
 
 <!-- VITRINE 2 -->
 <section class="showcase-carousel">
@@ -47,6 +38,17 @@
     "showcaseTitle": '<h2 class="banners-extra__title title--main">' ~  settings.vitrine2  ~ '</h2>',
     "products": products
     } %}
+</section>
+
+<section class="banners-extras">
+    <div class="center banners-extras__center">     
+        <div class="banners-extras__item">
+            {{ banner.extra10 }}
+        </div>        
+        <div class="banners-extras__item">
+            {{ banner.extra11 }}
+        </div>     
+    </div>
 </section>
 
 <!-- VITRINE 3 -->

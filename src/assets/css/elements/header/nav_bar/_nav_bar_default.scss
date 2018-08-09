@@ -43,6 +43,9 @@
   .navbar-container{
     max-width: 625px;
     width: 100%;
+    @media (max-width:991px){
+      padding: 0 15px;
+    }
   }
 
   ul.nv-01 {
@@ -91,9 +94,6 @@
 
         &:hover {
           > a {
-            background-color: $cor01;
-            color: #fff;
-
             .icon--menu,
             .cat__icon {
               fill: #fff!important;
@@ -126,7 +126,23 @@
         text-transform: uppercase;
         transition: all 150ms ease-in-out;
         z-index: 300;
-
+        padding: 5px 0;
+        &:after{
+          content: '';
+          display: block;
+          height: 3px;
+          background: $cor01;
+          position: absolute;
+          top: 100%;
+          width: 0%;
+          left: 0;
+          transition: width 200ms ease-in;
+        }
+        &:hover{
+          &:after{
+          width: 100%;
+          }
+        }
         @media(max-width: 1199px) {
           color: #7f7f7f;
           text-align: left;
@@ -169,7 +185,7 @@
       }
 
       > a {
-        color: #565a40;
+        color: $cor02;
         font-size: 13px;
         font-weight: 600;
         padding: 0 10px;
@@ -270,7 +286,7 @@
       }
 
       > a {
-        color: #565a40;
+        color: $cor02;
         display: block;
         font-size: 13px;
         font-weight: 600;
@@ -296,7 +312,7 @@
     z-index: -1;
     > li {
       > a {
-        color: #565a40;
+        color: $cor02;
         display: block;
         font-size: 13px;
         font-weight: 600;
@@ -377,7 +393,7 @@
 }
 
 .you-need__link {
-  color: #565a40;
+  color: $cor02;
   display: block;
   font-size: 13px;
   font-weight: 600;
@@ -431,4 +447,39 @@
   .you-need__link {
     padding: 5px 20px;
   }
+}
+.search__content{
+  display: none;
+}
+.search-block.actived{
+  position: fixed;  
+  z-index: 300;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.96;
+  margin-top: 0px;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+  background: #fff;
+
+  .search__content{
+    display: flex;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%);
+    max-width: 590px;
+    top: 25%;
+    form{
+      max-width: 750px;
+      width: 100%;
+    }
+  }
+}
+span.close-icon-search {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  font-size: 25px;
+  font-weight: 500;
 }

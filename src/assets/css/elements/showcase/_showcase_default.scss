@@ -1,5 +1,5 @@
 .showcase-title {
-  color: #565a40;
+  color: $cor02;
   display: block;
   font-size: 33px;
   font-weight: 300;
@@ -86,30 +86,57 @@
 
   .product-name {
     @media(min-width: 768px) {
-      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
-
-    h3 {
-      color: #565a40;
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 17px;
-      margin: 0 auto 10px;
-      max-width: 200px;
-      height: 34px;
-      overflow: hidden;
-      transition: all 150ms ease-in-out;
-
-      &:hover {
-        color: $cor01;
+    a{
+      display: flex;
+      align-items: center;
+      flex:0 0 100%;
+      flex-wrap: wrap;
+      h2{
+        font-size: 16px;
+        font-weight: 400;
+        color: $cor02;
+        margin: 0;
+      }
+    }
+ 
+    .variation-qtd{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      h3 {
+        font-size: 17px;
+        font-weight: 600;
+        background: $light-gray;
+        padding: 5px;
+        border-radius: 3px;
+        margin: 0;
+        height: 30px
+      }
+    }
+    .variation-qtd-vazio{
+      h3{
+        background: transparent;
+      }
+    }
+    .brand-showcase{
+      display: flex;
+      flex:0 0 100%;
+      text-transform: uppercase;
+      h4{
+        font-weight: 600;
+        font-size: 17px;
       }
     }
   }
 
   .product-desc a {
-    color: #787878;
+    color: $dark-gray;
     display: block;
     font-size: 11px;
     font-weight: 400;
@@ -124,14 +151,14 @@
   }
 
   .product-price > .preco-de {
-    color: #babaca;
+    color: $cor02;
     display: inline-block;
     line-height: 14px;
     text-decoration: line-through;
     vertical-align: middle;
 
     > span {
-      color: #babaca;
+      color: $cor02;
       display: none;
       font-size: 11px;
       font-weight: 400;
@@ -158,7 +185,7 @@
   }
 
   .parcelamento {
-    color: #787878;
+    color: $dark-gray;
     font-size: 11px;
     font-weight: 400;
     letter-spacing: -.1px;
@@ -172,7 +199,7 @@
     }
 
     * {
-      color: #787878;
+      color: $dark-gray;
       font-size: 11px;
       font-weight: 400;
       letter-spacing: -.1px;
@@ -180,7 +207,7 @@
 
     strong {
       &, span {
-        color: #787878;
+        color: $dark-gray;
         font-size: 11px;
         font-weight: 700;
       }
@@ -190,40 +217,54 @@
   .owl-wrapper {
 
     @media (max-width: 1199px) {
-      border-right: 1px solid #f1f1f1;
+      border-right: 1px solid $light-gray;
     }
 
   }
-
-
   .border {
     border: 1px solid transparent;
     border-radius: 0;
-    height: 420px;
+    height: 430px;
     margin: 0;
     padding: 20px 10px;
     position: relative;
     transition: all 150ms ease-in-out;
-
-    @media (max-width: 1199px) {
-      height: 365px;
-      padding: 20px 5px;
-    }
-
-    @media (max-width: 680px) {
-      height: 315px;
+    .product-image{
+      .image--two{
+        opacity: 0;        
+        width: 0;
+      }
     }
 
     &:hover {
+      transition: all 150ms ease-in-out;
       @media (min-width: 1200px) {
         border: 1px solid $cor01;
       }
-
       .showcase__buy {
         opacity: 1;
         visibility: visible;
         z-index: 200;
       }
+      .product-image{
+        .image--two{
+          opacity: 1;
+          width: auto;
+        }
+        .image--one{
+          opacity: 0;
+          width: 0;
+        }
+      }      
+     
+    }
+    
+    @media (max-width: 1199px) {
+      height: 365px;
+      padding: 20px 5px;
+    }
+    @media (max-width: 680px) {
+      height: 315px;
     }
     @include transition();
   }
@@ -324,7 +365,7 @@
 
   .unavailable {
     background-color: #c3c3c3;
-    color: #787878;
+    color: $dark-gray;
   }
 
   .labels {
@@ -337,7 +378,7 @@
   background: #f2f2f2 linear-gradient(to bottom, #f2f2f2 0%, #e9e9e9 100%);
   border: 1px solid #e9e9e9;
   border-radius: 2px;
-  color: #787878;
+  color: $dark-gray;
   cursor: pointer;
   display: inline-flex;
   font-size: 11px;
@@ -367,7 +408,7 @@
 
 
 .icon--quickview {
-  fill: #787878;
+  fill: $dark-gray;
   height: 11px;
   width: 19px;
 }
@@ -526,19 +567,20 @@
 }
 
 .product__prices {
+    display: flex;
+    margin: 10px -10px;
   .preco-de {
-    color: #959595;
+    color: $cor02;
     display: block;
     font-size: 13px;
     font-weight: 400;
     height: 14px;
     line-height: 14px;
-    margin: 0 0 2px;
+    margin: 0 10px;
     text-decoration: line-through;
   }
-
   .preco-por {
-    color: $cor01;
+    color: $cor02;
     font-size: 15px;
     font-weight: 600;
     margin: 0;
@@ -546,33 +588,30 @@
 }
 
 .formas-pagamento-box {
-  display: block;
+  display: flex;
   font-size: 0;
   line-height: 0;
   margin-top: 1px;
   overflow: hidden;
   text-transform: lowercase;
-
+  position: relative;
   br {
     line-height: 0;
   }
-
   br:first-child,
   .txt-forma-pagamento {
     display: none;
   }
-
   > * {
-    color: #3a3939;
+    color: $cor02;
     font-size: 13px;
     font-weight: 400;
     line-height: 22px;
+    margin:5px 1px;
   }
-
   > * {
     text-transform: none;
   }
-
   .preco-avista,
   .txt-avista {
     color: #4ca014;
@@ -581,8 +620,8 @@
 
   strong,
   .color {
-    color: $cor01;
-    font-size: 13px;
+    color: $cor02;
+    font-size: 16px;
     font-weight: 700;
   }
 
@@ -595,7 +634,12 @@
       margin-right: 4px;
     }
   }
-
+&:before{
+  content: '';
+  border-top: 1px solid $light-gray;
+  width: 100%;
+  position: absolute;
+}
 }
 
 @media (max-width: 680px) {
@@ -615,3 +659,7 @@
 .footer__pages--support {
   max-width: 320px;
 }
+
+
+
+
