@@ -17,10 +17,6 @@
                 <span class="preco-off">OFF</span>
             </div>
             {% endif %}
-
-            
-           
-          
             
             <div class="product-name" itemprop="name">
                 {% if product.has_variation %}
@@ -60,9 +56,7 @@
         </div>
 
         <div class="showcase__buy">
-            <a class="buy__button" href="{{ product.link }}">
-                Comprar
-            </a>
+            <a class="buy__button" href="{{ product.link }}">Comprar</a>
             <button class="quick__button" data-quickview-button type="button" data-id="{{ product.id }}">
                 <svg id="icon-eye" viewBox="0 0 32 32">
                     <title>eye</title>

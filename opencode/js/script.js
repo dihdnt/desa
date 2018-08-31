@@ -353,3 +353,15 @@ jQuery(".search__triger").click(function () {
 jQuery(".close-icon-search").click(function () {
     jQuery(".search-block").removeClass("actived");
 }); 
+
+
+
+jQuery(".triger_btn-tabs").click(function () {    
+    var item = jQuery(this).closest('.dispblock');
+    var hasOpen = !item.hasClass('drop');
+    jQuery('.dispblock').removeClass('drop');
+    if(hasOpen) item.addClass("drop");
+    else{ item.removeClass("drop") }
+
+});
+

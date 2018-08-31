@@ -5,9 +5,15 @@
 	           <svg class="cart__icon icon--cart">
                    <use xlink:href="#icon-cart"></use>
                </svg>
+               {% if cart.amout < 10 %}
+                <span class="cart__env-amount">
+                    <span class="cart__amount" data-cart="amount-newiscool">0{{ cart.amount }}</span>                          
+                </span>
+                {% else %}
                 <span class="cart__env-amount">
                     <span class="cart__amount" data-cart="amount-newiscool">{{ cart.amount }}</span>                          
                 </span>
+                {% endif %}
            </div>
         </a>
         <div class="cart__dropdown" data-minicart={{ store.id }}></div>
